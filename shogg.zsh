@@ -40,4 +40,10 @@ COMPLETION_WAITING_DOTS="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 
-plugins=(git colorizer zsh-syntax-highlighting common-aliases osx)
+plugins=(git colorizer common-aliases osx zsh-syntax-highlighting)
+
+function lazygit() {
+  git add .
+  git commit -a -m "$*"
+  git push
+}
